@@ -19,7 +19,7 @@ class test_stock(unittest,testcase):
     #
     def test_firstcase(self):
     #connect to mysql database
-        con = pymysql.connect(host='127.0.0.1',user='root',passwd='greatnaolAT0*',db='stock')
+        con = pymysql.connect(host='127.0.0.1',user='======',passwd='-------*',db='stock')
         cursor = con.cursor()
 
         cursor.execute("select date from goog_monthly");
