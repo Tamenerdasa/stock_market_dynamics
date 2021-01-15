@@ -9,7 +9,7 @@ date = []
 close = []
 #
 def plot_fun(i, date, close):
-    con = pymysql.connect(host='127.0.0.1', user='root', passwd='greatnaolAT0*', db='stock')
+    con = pymysql.connect(host='127.0.0.1', user='root', passwd='mypassword', db='stock')
     cursor = con.cursor()
     cursor.execute(
         "select CAST(date as datetime), CAST(close AS UNSIGNED), CAST(high AS UNSIGNED), CAST(volume AS UNSIGNED) from msft_stock WHERE date > '2018/01/01' order by date");
@@ -20,11 +20,6 @@ def plot_fun(i, date, close):
     for record in result:
         date.append(record[0])
         close.append(record[1])
-#        high.append(record[2])
-#        low.append(record[3])
-#        volume.append(record[4])
-#
-#    fig = plt.figure(figsize=(12, 7))
 #
     ax.clear()
     ax.plot(date, close)
